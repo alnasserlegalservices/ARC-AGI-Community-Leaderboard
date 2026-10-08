@@ -1,0 +1,30 @@
+name: "MERENVAY–Mentova Runtime Repair"
+
+authors:
+  - name: "Mohammed Mazen Al Nasser"
+    affiliation: "MERENVAY"
+    linkedin: "https://www.linkedin.com/in/mohammed-al-nasser-4706a37b/"
+    github: "https://github.com/alnasserlegalservices"
+
+citation: "Al Nasser, M. M. (2026). MERENVAY–Mentova Runtime Repair: Reproducible ARC-AGI-2 Public Evaluation Dispatch Optimization."
+
+description: >
+  A bounded runtime-dispatch repair and cross-platform reproduction of the
+  open-source Mentova symbolic ARC-AGI-2 public evaluator. Six already-existing
+  verified transformation rules are prioritized using cheap structural
+  prefilters, eliminating timeouts without adding answer keys or changing
+  transformation semantics or benchmark data.
+
+code_url: "https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction"
+
+versions:
+  - version: "1.0"
+    date: 2026-10-08
+    changes: "Stable cross-platform public reproduction and dispatch-order runtime repair"
+    models:
+      - name: "Mentova symbolic solver at d117c699 + MERENVAY dispatch repair"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 100.0
+        set: "public"
+        cost: 0.00
