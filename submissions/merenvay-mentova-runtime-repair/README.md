@@ -1,5 +1,7 @@
 # MERENVAY–Mentova Runtime Repair
 
+> **Methodology update — 9 October 2026.** The pinned upstream Mentova scorer contains an answer-conditioned search path: `Computed = TestOut` is checked before it accepts a candidate rule. Accordingly, its archived 120/120 is a reproducible execution result, not by itself a blinded prediction measure. To test this limitation, MERENVAY ran a [separate answer-isolated first-candidate diagnostic](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/37907563655): **120/120**, 120 distinct public task IDs, zero failures, 20,026 ms. This diagnostic freezes the first predicted output before applying strict `==` comparison with the expected answer. Importantly, the underlying Mentova code was developed against those publicly known ARC tasks; **neither result measures genuine unseen-task generalisation or official verification**. See the [public review discussion](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/issues/1).
+
 ## Result reported
 
 A native symbolic solver reproduced **120/120 exact tasks (100.00%)** on the ARC-AGI-2 **public evaluation set** across independent executions and two operating systems:
@@ -21,7 +23,7 @@ The upstream dispatcher could reach correct, already-existing rules too late und
 - `hole_color`
 - `frame_compass`
 
-The patch does **not** add answer keys, alter task data, or change transformation semantics. The contribution is a bounded runtime-stability and dispatch-order repair plus an independently recorded cross-platform reproduction.
+The patch does **not** add answer keys, alter task data, or change transformation semantics. The contribution is a bounded runtime-stability and dispatch-order repair plus publicly recorded reproducibility runs. It is not a separate general-purpose ARC-solving system.
 
 ## Public evidence
 
@@ -54,3 +56,5 @@ A final local stable evidence package was also timestamped through DigiCert RFC 
 This is a **self-reported public-evaluation result** submitted for transparent community review. It is not an ARC Prize Verified semi-private or private score, does not establish hidden-set generalisation, and is not a certificate of general intelligence.
 
 The underlying Mentova solver was developed task-by-task against the public evaluation corpus and its published report discloses human solution walkthroughs and official-answer confirmation for difficult public tasks. Accordingly, this entry should be interpreted as a reproducible symbolic public-benchmark implementation and runtime-repair record—not as uncontaminated evidence of fluid intelligence on unseen tasks.
+
+The original upstream evaluation procedure used test outputs inside rule search. The answer-isolated first-candidate diagnostic does not pass the expected test output into prediction and again scored 120/120 on the same known public corpus; this addresses that particular measurement leak, but not benchmark exposure or rule-set overfitting. Both outcomes are described for transparency, not as proof that the method satisfies the Community Leaderboard's general-purpose criterion.
