@@ -1,4 +1,4 @@
-name: "MERENVAY–Mentova Runtime Repair"
+name: "MERENVAY"
 
 authors:
   - name: "Mohammed Mazen Al Nasser"
@@ -6,7 +6,7 @@ authors:
     linkedin: "https://www.linkedin.com/in/mohammed-al-nasser-4706a37b/"
     github: "https://github.com/alnasserlegalservices"
 
-citation: "Al Nasser, M. M. (2026). MERENVAY–Mentova Runtime Repair: Reproducible ARC-AGI-2 Public Evaluation Dispatch Optimization."
+citation: "Al Nasser, M. M. (2026). MERENVAY: Reproducible ARC-AGI-2 Public Evaluation Runtime Repair."
 
 description: >
   A bounded runtime-dispatch repair and cross-platform reproduction of the
