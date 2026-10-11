@@ -44,7 +44,7 @@ The patch does **not** add answer keys, alter task data, or change transformatio
 - Rekor transparency-log entry: https://search.sigstore.dev?logIndex=3147098838
 - Detailed stable receipt: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/blob/main/STABLE_VERIFICATION_RECEIPT.md
 
-The GitHub-hosted workflow performs a clean checkout, pins the upstream commit, applies the public patch, executes all 120 tasks, asserts `RESULT score=120 total=120`, asserts `FAILS []`, uploads the evidence artifact and generates signed build provenance.
+The preserved **legacy first-test-per-task** GitHub-hosted workflow performs a clean checkout, pins the upstream commit, applies the public patch, executes one selected test input for each of the 120 public task IDs, asserts `RESULT score=120 total=120`, asserts `FAILS []`, uploads the evidence artifact and generates signed build provenance. This evidence supports only the legacy diagnostic, not the full multi-test score reported above.
 
 ## Evidence fingerprints
 
