@@ -10,7 +10,7 @@ The current answer-isolated generic submission path, evaluated **after predictio
 - **152/167 exact public test outputs = 91.017964%** — output-weighted/Kaggle-style
 - **105/120 task IDs** with every public test output correct
 - **120 task IDs / 167 test inputs** processed
-- GitHub-hosted generation time: **46.115 s**
+- GitHub-hosted generation elapsed: **46.115 s** in run `38120350359` and **24.716 s** in independent rescore run `38124392038`; timing is environment/run dependent, not a speed record
 - Submission SHA-256: `a9e169517a419a1ff9bb7613f2d44803a00825dc5820aa3058dcf4b331cf9199`
 
 The earlier native runner remains preserved as a **legacy first-test-per-task reproduction**, not the full multi-test score:
@@ -38,6 +38,7 @@ The patch does **not** add answer keys, alter task data, or change transformatio
 
 - Code and reproduction instructions: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction
 - Full multi-test answer-isolated regression: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/38120350359
+- Independent rescore confirming both aggregate metrics: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/38124392038
 - Stable GitHub Actions run: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/37769412232
 - Evidence artifact: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/37769412232/artifacts/11547158323
 - GitHub SLSA/Sigstore attestation: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/attestations/53909570
