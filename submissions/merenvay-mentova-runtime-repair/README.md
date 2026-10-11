@@ -1,14 +1,22 @@
 # MERENVAY–Mentova Runtime Repair
 
-> **Methodology update — 9 October 2026.** The pinned upstream Mentova scorer contains an answer-conditioned search path: `Computed = TestOut` is checked before it accepts a candidate rule. Accordingly, its archived 120/120 is a reproducible execution result, not by itself a blinded prediction measure. To test this limitation, MERENVAY ran a [separate answer-isolated first-candidate diagnostic](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/37907563655): **120/120**, 120 distinct public task IDs, zero failures, 20,026 ms. This diagnostic freezes the first predicted output before applying strict `==` comparison with the expected answer. Importantly, the underlying Mentova code was developed against those publicly known ARC tasks; **neither result measures genuine unseen-task generalisation or official verification**. See the [public review discussion](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/issues/1).
+> **Methodology update — 11 October 2026.** The pinned upstream Mentova scorer contains an answer-conditioned search path: `Computed = TestOut` is checked before it accepts a candidate rule. Its archived **120/120** therefore remains a reproducible legacy result over **one selected test input per each of 120 public task IDs**, not the full ARC-AGI-2 multi-test metric. MERENVAY subsequently built a generic answer-isolated submission path that never receives expected test outputs. On the current official ARC-AGI-2 public evaluation data, that frozen pipeline produced **152/167 exact test outputs = 91.017964%**, with **105/120 task IDs** having all of their test outputs correct, in a GitHub-hosted regression run. A separate earlier first-candidate diagnostic also logged **120/120** first test inputs, zero failures, 20,026 ms. The underlying Mentova rule library was developed against these publicly known ARC tasks, so **none of these results measures genuine unseen-task generalisation or ARC Prize verification**. See the [public review discussion](https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/issues/1).
 
 ## Result reported
 
-A native symbolic solver reproduced **120/120 exact tasks (100.00%)** on the ARC-AGI-2 **public evaluation set** across independent executions and two operating systems:
+The current answer-isolated generic submission path, evaluated **after prediction artifacts were frozen**, produced:
 
-- Windows x64 / SWI-Prolog 10.0.2 — run 1: **120/120**, 78.185 s, failures `[]`
-- Windows x64 / SWI-Prolog 10.0.2 — run 2: **120/120**, 78.442 s, failures `[]`
-- GitHub-hosted Ubuntu 24.04.5 / SWI-Prolog 9.0.4: **120/120**, 40.412 s, failures `[]`
+- **152/167 exact public test outputs = 91.017964%**
+- **105/120 task IDs** with every public test output correct
+- **120 task IDs / 167 test inputs** processed
+- GitHub-hosted generation time: **46.115 s**
+- Submission SHA-256: `a9e169517a419a1ff9bb7613f2d44803a00825dc5820aa3058dcf4b331cf9199`
+
+The earlier native runner remains preserved as a **legacy first-test-per-task reproduction**, not the full multi-test score:
+
+- Windows x64 / SWI-Prolog 10.0.2 — run 1: **120/120 first test inputs**, 78.185 s, failures `[]`
+- Windows x64 / SWI-Prolog 10.0.2 — run 2: **120/120 first test inputs**, 78.442 s, failures `[]`
+- GitHub-hosted Ubuntu 24.04.5 / SWI-Prolog 9.0.4: **120/120 first test inputs**, 40.412 s, failures `[]`
 
 ## Contribution
 
@@ -28,6 +36,7 @@ The patch does **not** add answer keys, alter task data, or change transformatio
 ## Public evidence
 
 - Code and reproduction instructions: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction
+- Full multi-test answer-isolated regression: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/38120350359
 - Stable GitHub Actions run: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/37769412232
 - Evidence artifact: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/actions/runs/37769412232/artifacts/11547158323
 - GitHub SLSA/Sigstore attestation: https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/attestations/53909570
@@ -57,4 +66,4 @@ This is a **self-reported public-evaluation result** submitted for transparent c
 
 The underlying Mentova solver was developed task-by-task against the public evaluation corpus and its published report discloses human solution walkthroughs and official-answer confirmation for difficult public tasks. Accordingly, this entry should be interpreted as a reproducible symbolic public-benchmark implementation and runtime-repair record—not as uncontaminated evidence of fluid intelligence on unseen tasks.
 
-The original upstream evaluation procedure used test outputs inside rule search. The answer-isolated first-candidate diagnostic does not pass the expected test output into prediction and again scored 120/120 on the same known public corpus; this addresses that particular measurement leak, but not benchmark exposure or rule-set overfitting. Both outcomes are described for transparency, not as proof that the method satisfies the Community Leaderboard's general-purpose criterion.
+The original upstream evaluation procedure used test outputs inside rule search. The earlier answer-isolated first-candidate diagnostic did not pass the expected test output into prediction, but it covered only one selected test input per task ID. The newer generic answer-isolated path covers every current public test input and scores **152/167 = 91.017964%** after predictions are frozen. This addresses the measurement leak and the earlier incomplete multi-test accounting, but **not** benchmark exposure or rule-set overfitting. All outcomes are described for transparency, not as proof of hidden-set generalisation or ARC Prize verification.
