@@ -20,11 +20,11 @@ code_url: "https://github.com/alnasserlegalservices/merenvay-arc2-public-reprodu
 versions:
   - version: "1.0"
     date: 2026-10-08
-    changes: "Answer-isolated full public multi-test regression plus cross-platform runtime repair"
+    changes: "Answer-isolated full public multi-test regression; community-style task-average score"
     models:
       - name: "Mentova symbolic solver at d117c699 + MERENVAY dispatch repair"
     scores:
       - benchmark: "arc-agi-2"
-        score: 91.017964
+        score: 94.027778
         set: "public"
         cost: 0.00
