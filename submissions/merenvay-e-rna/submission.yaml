@@ -1,0 +1,25 @@
+name: "MERENVAY E-RNA v2"
+authors:
+  - name: "Mohammed Al Nasser"
+    affiliation: "Independent"
+    github: "https://github.com/alnasserlegalservices"
+description: >-
+  A task-local, bounded symbolic search uses a failed training candidate's
+  residual to propose a two-step program extension. On one seed-0
+  development run over 40 public ARC-AGI-2 training tasks, it recorded 2/40
+  exact outputs, versus 1/40 for each control. The result is uninformative
+  for an improvement claim; the accompanying erratum documents unmatched
+  proposal support, incomplete work accounting and a weak control.
+code_url: "https://github.com/alnasserlegalservices/merenvay-arc2-public-reproduction/tree/08cf1ba38f6600d17370c8f4af8ee1f2dcaf3d4a/research/erna_v2"
+versions:
+  - version: "2.0"
+    date: "2026-11-14"
+    changes: >-
+      Publication of the unchanged 10 November development probe,
+      with a separate erratum, scoped license and local reproduction.
+    models:
+      - name: "Bounded symbolic Python search; no LLM inference"
+    scores:
+      - benchmark: "arc-agi-2"
+        score: 5.0
+        set: "training-development-40"
